@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { rankResumes } from "../services/api";
 
 type Result = {
   filename: string;
@@ -43,41 +44,23 @@ export default function Home() {
       alert("Please provide job description and upload resumes.");
       return;
     }
-
-    const formData = new FormData();
-    formData.append("job_description", jobDescription);
-
-    files.forEach((file) => {
-      formData.append("resumes", file);
-    });
-
+  
     try {
       setLoading(true);
       setResults([]);
       setSelectedResult(null);
-
-      const response = await fetch("http://127.0.0.1:8000/rank-files", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (!response.ok) {
-        throw new Error("Server error");
-      }
-
-      const data: Result[] = await response.json();
-      setResults(data);
-      if (data.length > 0) {
-        setSelectedResult(data[0]);
-      }
+    
+      const result = await rankResumes(files, jobDescription);
+      setResults(result);
+    
     } catch (error) {
       console.error(error);
-      alert("Something went wrong.");
+      alert("Something went wrong");
     } finally {
       setLoading(false);
     }
   };
-
+  
   return (
     <main className="relative min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-white p-8">
       <motion.div
