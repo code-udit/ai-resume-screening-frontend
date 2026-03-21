@@ -38,31 +38,44 @@ export default function Home() {
   const [results, setResults] = useState<Result[]>([]);
   const [selectedResult, setSelectedResult] = useState<Result | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  const [showSlowMsg, setShowSlowMsg] = useState(false);
 
   const handleSubmit = async () => {
     if (!jobDescription || files.length === 0) {
       alert("Please provide job description and upload resumes.");
       return;
     }
-  
+
+    setShowSlowMsg(false);
+
+    const timer = setTimeout(() => {
+      setShowSlowMsg(true);
+    }, 6000);
+
     try {
       setLoading(true);
       setResults([]);
       setSelectedResult(null);
-    
+
       const result = await rankResumes(files, jobDescription);
       setResults(result);
-    
     } catch (error) {
       console.error(error);
       alert("Something went wrong");
     } finally {
+      clearTimeout(timer);
+      setShowSlowMsg(false);
       setLoading(false);
     }
   };
-  
+
   return (
     <main className="relative min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-white p-8">
+      {showSlowMsg && (
+        <div className="fixed top-6 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white border border-gray-700 px-6 py-3 rounded-lg shadow-lg z-50">
+          Backend is waking up… this may take up to 20 seconds
+        </div>
+      )}
       <motion.div
         initial={{ opacity: 0, x: 40 }}
         animate={{ opacity: 1, x: 0 }}
@@ -132,7 +145,7 @@ export default function Home() {
               onClick={handleSubmit}
               className="bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-3 rounded-xl font-semibold text-white shadow-lg hover:scale-105 transition transform"
             >
-              {loading ? "Analyzing..." : "Analyze Resumes"}
+              {loading ? "Analyzing..." : "Analyze Resume"}
             </button>
           </div>
         </div>
