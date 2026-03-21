@@ -50,7 +50,7 @@ export default function Home() {
 
     const timer = setTimeout(() => {
       setShowSlowMsg(true);
-    }, 6000);
+    }, 12000);
 
     try {
       setLoading(true);
