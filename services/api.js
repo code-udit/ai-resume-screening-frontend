@@ -1,4 +1,4 @@
-const BASE_URL = "https://ai-resume-screening-backend.onrender.com";
+const BASE_URL = process.env.BACKEND_URL;
 
 export const rankResumes = async (files, jobDescription) => {
   const formData = new FormData();
