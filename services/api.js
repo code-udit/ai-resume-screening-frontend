@@ -1,4 +1,4 @@
-const BASE_URL = process.env.BACKEND_URL;
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export const rankResumes = async (files, jobDescription) => {
   const formData = new FormData();
