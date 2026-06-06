@@ -1,5 +1,9 @@
 # AI Resume Screening Frontend
 
+### 👨‍💻 Developed By
+
+**Udit U Gunagi**
+
 A modern AI-powered resume screening application built with Next.js, TypeScript, Tailwind CSS, and Framer Motion that helps recruiters automatically rank resumes against job descriptions using machine learning and NLP-based scoring.
 
 ---
