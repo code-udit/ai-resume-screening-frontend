@@ -1,36 +1,223 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Resume Screening Frontend
 
-## Getting Started
+A modern AI-powered resume screening application built with Next.js, TypeScript, Tailwind CSS, and Framer Motion that helps recruiters automatically rank resumes against job descriptions using machine learning and NLP-based scoring.
 
-First, run the development server:
+---
+
+## 🚀 Overview
+
+AI Resume Screening Frontend provides an intuitive dashboard for evaluating candidate resumes against job requirements.
+
+Users can:
+
+* Upload multiple resumes
+* Paste job descriptions
+* Rank candidates automatically
+* View explainable AI scoring
+* Compare candidate matches
+* Analyze skills and experience alignment
+* Identify top candidates quickly
+
+This frontend communicates with the FastAPI backend that performs resume parsing, NLP processing, and candidate scoring.
+
+---
+
+## 🔗 Links
+
+### 🌐 Live Demo
+
+https://ai-resume-screening-frontend-flame.vercel.app/
+
+### 💻 Frontend Repository
+
+https://github.com/code-udit/ai-resume-screening-frontend.git
+
+### ⚙️ Backend Repository
+
+https://github.com/code-udit/ai-resume-screening-backend.git
+
+---
+
+## 🛠 Tech Stack
+
+* Next.js 15
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+* React Hooks
+* Axios / Fetch API
+* Responsive UI
+
+---
+
+## 📁 Project Structure
+
+```bash
+ai-resume-screening-frontend/
+│
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+│
+├── services/
+│   └── api.js
+│
+├── public/
+├── package.json
+├── next.config.ts
+└── tsconfig.json
+```
+
+---
+
+## ✨ Features
+
+### 📄 Resume Upload
+
+* Upload Multiple Resume Files
+* Drag-and-Select Experience
+* Batch Resume Processing
+* PDF Resume Support
+
+### 📝 Job Description Analysis
+
+* Paste Custom Job Descriptions
+* Skill Requirement Extraction
+* Candidate Matching Analysis
+
+### 🤖 AI Candidate Ranking
+
+* Automated Resume Scoring
+* Candidate Ranking System
+* Similarity Matching
+* Explainable AI Results
+
+### 📊 Analytics Dashboard
+
+* Final Candidate Score
+* Skill Match Score
+* Experience Match Score
+* Similarity Score
+* Candidate Comparison Panel
+
+### 🎨 UI Features
+
+* Modern Dashboard Design
+* Responsive Layout
+* Animated Components
+* Loading States
+* Real-Time Progress Feedback
+* Mobile Friendly Interface
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env.local` file in the root directory.
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
+
+---
+
+## 📦 Installation
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/code-udit/ai-resume-screening-frontend.git
+cd ai-resume-screening-frontend
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Application runs on:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🔌 Backend Connection
 
-To learn more about Next.js, take a look at the following resources:
+Ensure the backend server is running before starting the frontend.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Backend API:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+http://localhost:8000
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📸 Dashboard Modules
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Resume Screening
+
+Users can:
+
+* Upload multiple resumes
+* Submit a job description
+* Start AI-powered evaluation
+
+### Candidate Ranking
+
+Displays:
+
+* Ranked candidate list
+* Match percentage
+* Candidate prioritization
+
+### Candidate Analytics
+
+Shows:
+
+* Final Score
+* Skill Match Score
+* Experience Match Score
+* Similarity Score
+* Match Classification
+
+---
+
+## 🔄 Screening Workflow
+
+1. Recruiter uploads resumes
+2. Job description is provided
+3. Frontend sends files to backend
+4. AI engine processes resumes
+5. Candidates are scored and ranked
+6. Results are displayed visually
+7. Recruiter reviews top matches
+
+---
+
+## 📈 Future Improvements
+
+* Resume Parsing Preview
+* Advanced Candidate Filters
+* Search and Pagination
+* Interview Recommendation Engine
+* Recruiter Authentication
+* Team Collaboration
+* Export Reports
+* Dark Mode Support
+
+---
+
+## 👨‍💻 Author
+
+Developed by **Udit U Gunagi**
